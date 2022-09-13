@@ -73,8 +73,12 @@ console.log(text);
 
 // parse floating
 
-var penPrice = '122.02';
+// var penPrice = '122.02';
 
-console.log(penPrice);
-console.log(parseFloat(penPrice));
+// console.log(penPrice);
+// console.log(parseFloat(penPrice));
+
+var num1 = 4.5645;
+
+console.log(num1.toFixed());
 
