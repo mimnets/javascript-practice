@@ -21,5 +21,14 @@ tableItems[0] = 'watch';
 // tableItems.push('adapter');
 
 // how to remove an element from the array in the last index
-tableItems.pop();
-console.log(tableItems);
+// tableItems.pop();
+
+//how to remove the first element of the array
+// tableItems.shift();
+
+//how to add an element to the array in the first index
+tableItems.unshift('anything');
+
+var minusIndex = tableItems[-1];
+
+console.log(minusIndex);
