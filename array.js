@@ -15,4 +15,11 @@ tableItems[0] = 'watch';
 
 //get the items of the index
  
-console.log(tableItems[0]);
+// console.log(tableItems[0]);
+
+// how to add an elements to the array in the last index
+// tableItems.push('adapter');
+
+// how to remove an element from the array in the last index
+tableItems.pop();
+console.log(tableItems);
