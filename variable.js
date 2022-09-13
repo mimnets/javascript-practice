@@ -30,9 +30,51 @@ var text = 'this is a string';
 //numerical type - decimal and floating types
 var price = 20; // decimal
 var discount = 10.5; // floating
+var mobilePrice = 10000;
+var toatalPrice = 0;
 
+price += 20;
+mobilePrice -=2389;
+
+// console.log(mobilePrice);
+
+// ++ and -- are special operator to plus 1 or minus 1
+price++;
+mobilePrice--;
+// console.log(mobilePrice);
+
+//Operators
+// toatalPrice = price + mobilePrice;
+
+// console.log(toatalPrice);
+
+// toatalPrice = price * mobilePrice;
+
+// console.log(toatalPrice);
+
+// toatalPrice = mobilePrice / price;
+
+// console.log(toatalPrice);
+
+// toatalPrice = mobilePrice % 3;
+
+// console.log(toatalPrice);
 // boolean type - true or false
 var isFish = true; // true
 var isMeat  = false; // false
 
 console.log(text);
+
+// parse int
+// var penPrice = '122';
+
+// console.log(penPrice);
+// console.log(parseInt(penPrice));
+
+// parse floating
+
+var penPrice = '122.02';
+
+console.log(penPrice);
+console.log(parseFloat(penPrice));
+
