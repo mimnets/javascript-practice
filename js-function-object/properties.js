@@ -39,3 +39,4 @@ console.log(shoppingCart);
 shoppingCart[propertyName] = 89;
 
 console.log(shoppingCart);
+
