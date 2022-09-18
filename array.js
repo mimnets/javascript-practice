@@ -26,7 +26,7 @@ tableItems[0] = 'watch';
 //how to remove the first element of the array
 // tableItems.shift();
 
-//how to add an element to the array in the first index
+//how to add an element to the array in the first index 
 tableItems.unshift('anything');
 
 var minusIndex = tableItems[-1];
