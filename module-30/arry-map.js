@@ -14,3 +14,21 @@ const doubleIt = num => num * 2;
 const makeDouble = numbers.map(num => num * 2);
 
 console.log(makeDouble)
+
+const products = [
+    {
+        id:1,
+        name: 'laptop',
+        price: 480000
+    },
+    {
+        id:2,
+        name: 'mobile',
+        price: 80000
+    },
+    {
+        id:2,
+        name: 'watch',
+        price: 23000
+    }
+]
