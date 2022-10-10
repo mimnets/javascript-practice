@@ -5,6 +5,11 @@ function loadUsers(){
 
 }
 
-function displayUsers(data){
-    console.log(data);
+function displayUsers(bata){
+    const ul = document.getElementById('users-list');
+    for(const user of bata){
+        const li = document.createElement('li');
+        li.innerText = user.name;
+        ul.appendChild(li);
+    }
 }
