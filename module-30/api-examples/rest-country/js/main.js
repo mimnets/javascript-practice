@@ -6,17 +6,27 @@ const loadCountry = () =>{
 
 const displayCountry = countries =>{
     const getCountry = document.getElementById('country-container');
-    for(const country of countries){
-        const countryDetails = country.name;
-        console.log(country.name)
+    // With For loop
+    // for(const country of countries){
+    //     console.log(country.name)
+    //     const countryDiv = document.createElement('div');
+    //     countryDiv.classList.add('country');
+    //     countryDiv.innerHTML = `
+    //     <h4>Country Name:${countryDetails.common} </h4>
+    //     <h5>Official Name:${countryDetails.official} </h5>
+    //     `;
+    // getCountry.appendChild(countryDiv);
+    // }
+    // With forEach method
+    countries.forEach(country => {
+        console.log(country);
         const countryDiv = document.createElement('div');
         countryDiv.classList.add('country');
         countryDiv.innerHTML = `
-        <h4>Country Name:${countryDetails.common} </h4>
-        <h5>Official Name:${countryDetails.official} </h5>
+        <h1>Country Common Name:${country.name.common}</h1>
+        <h2>Country Offical Name: ${country.name.official}</h2>
         `;
-    getCountry.appendChild(countryDiv);
-    }
-    
+        getCountry.appendChild(countryDiv);
+    })
 }
 loadCountry()
