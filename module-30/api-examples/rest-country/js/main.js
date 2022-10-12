@@ -19,14 +19,32 @@ const displayCountry = countries =>{
     // }
     // With forEach method
     countries.forEach(country => {
-        console.log(country);
+        //console.log(country);
         const countryDiv = document.createElement('div');
         countryDiv.classList.add('country');
         countryDiv.innerHTML = `
-        <h1>Country Common Name:${country.name.common}</h1>
-        <h2>Country Offical Name: ${country.name.official}</h2>
+        <h5>Country Common Name:${country.name.common}</h5>
+        <button onclick="countryDetails('${country.cca3}')">Get Country Details</button>
         `;
         getCountry.appendChild(countryDiv);
     })
+}
+
+const countryDetails = (countryCode) =>{
+    //console.log("clicked", countryCode);
+    // https://restcountries.com/v3.1/alpha{code}
+    const url = `https://restcountries.com/v3.1/alpha/${countryCode}`
+        fetch(url)
+        .then(res => res.json())
+        .then(cDetails => displayCountryDetails(cDetails[0]))
+}
+
+const displayCountryDetails = country =>{
+    console.log(country);
+    const countryDetail = document.getElementById('country-detail');
+    countryDetail.innerHTML = `
+        <h3>Capital Name: ${country.capital}</h3>
+        <img src="${country.flags.png}"/>
+    `
 }
 loadCountry()
