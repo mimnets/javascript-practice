@@ -6,9 +6,10 @@ const loadPhones = async (searchText, dataLimit) =>{
 }
 
 const displayPhones = (phones, dataLimit) =>{
-    console.log(phones)
+    //console.log(phones)
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
+        // Display 5 phone only.
     const showAll = document.getElementById('show-all');
     if(dataLimit && phones.length > 5){
         phones = phones.slice(0, 5);
@@ -35,11 +36,12 @@ const displayPhones = (phones, dataLimit) =>{
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${phone.phone_name}</h5>
-          <p class="card-text">${phone.slug}</p>
+          <p class="card-text">Description of the product.</p>
+          <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary">Show Details</button>
         </div>
         `;
         phoneContainer.appendChild(phoneDiv);
-    })
+    });
     // Stop loader
     toggleSpinner(false);
 }
@@ -49,7 +51,7 @@ const processSearch = (dataLimit) =>{
     const searchFiled = document.getElementById('search-field');
     const searchText = searchFiled.value;
     loadPhones(searchText, dataLimit);
-    searchFiled.value = '';
+    //searchFiled.value = '';
 }
 // Handle search button click
 document.getElementById('btn-search').addEventListener('click', function(){
@@ -61,6 +63,14 @@ document.getElementById('btn-search').addEventListener('click', function(){
     // searchFiled.value = '';
     processSearch(5);
 })
+
+// Search input field enter key handler
+document.getElementById('search-field').addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+    processSearch(5);        
+    }
+})
+
 
 const toggleSpinner = isLoading =>{
     const loaderSection = document.getElementById('loader');
@@ -77,4 +87,12 @@ const toggleSpinner = isLoading =>{
 document.getElementById('btn-show-all').addEventListener('click', function(){
     processSearch();
 })
+
+const loadPhoneDetails = async id =>{
+    const url =`https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.data);
+}
+
 //loadPhones()
