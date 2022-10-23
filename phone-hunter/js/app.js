@@ -1,4 +1,4 @@
-const loadPhones = async (searchText) =>{
+/*const loadPhones = async (searchText) =>{
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     const res = await fetch(url);
     const data = await res.json();
@@ -32,3 +32,26 @@ document.getElementById('btn-search').addEventListener('click', function(){
 
 
 loadPhones()
+*/
+
+function chunkArrayInGroups(arr, size) {
+    let output = [];
+    let subarray = [];
+    let subctr = 0;
+  
+    for(let i = 0; i < arr.length; i++){
+      if(subctr === size){
+        subctr = 0;
+      }
+      else if(arr.length >= size){
+        console.log(arr)
+      }
+      subctr++;
+    }
+  
+    //return subarray;
+  }
+  
+  let result = chunkArrayInGroups(["a", "b", "c", "d"], 2);
+  
+  console.log(result);
